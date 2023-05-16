@@ -88,5 +88,7 @@ UPDATE produtos SET nome = 'Xbox One', descricao = 'Novo lançamento com parcela
 ## DELETE (SEMPRE COM WHERE!!)
 ```sql
 DELETE FROM produtos WHERE id = 3;
-DELETE FROM fabricantes WHERE id = 1; -- ERRO! Pois já tem produtos relacionados a esse fabricante, para apagar, você tem que se livar dos produtos dependentes.
+
+--ERRO! Pois já tem produtos relacionados a esse fabricante, para apagar, você tem que se livar dos produtos dependentes.
+DELETE FROM fabricantes WHERE id = 1;
 ```
