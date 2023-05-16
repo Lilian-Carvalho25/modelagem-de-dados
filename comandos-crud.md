@@ -63,4 +63,30 @@ SELECT nome FROM produtos WHERE fabricante_id <> 4;
 /* OPERADOR OU: OR */
 SELECT nome, descricao FROM produtos
 WHERE fabricante_id = 2 OR fabricante_id = 3;
+
+/* ORDEM CRESCENTE (ASC - padrão) */
+SELECT nome, descricao FROM produtos ORDER BY nome; 
+/* ORDEM DECRESCENTE (DESC) */
+SELECT nome, descricao FROM produtos ORDER BY nome DESC; 
+/* COUNT(campo especial) é uma função de contagem de registros */
+SELECT COUNT(id) FROM produtos;
+
+/* Usando AS para definir um apelido para a coluna de resultados */
+SELECT COUNT(id) AS Quantidade FROM produtos;
+```
+
+## UPDATE (SEMPRE COM WHERE!!)
+```sql
+UPDATE fabricantes SET nome = 'Asus do Brasil' WHERE id = 2;
+
+/* Primeiro exercício = Mudando o fabricante da geladeira de Brastemp para Samsung*/
+UPDATE produtos SET fabricante_id = 6 WHERE id = 4;
+/* Segundo exercício = Mudando o nome de "Xbox 123" para "Xbox One" e mudando a descrição. */
+UPDATE produtos SET nome = 'Xbox One', descricao = 'Novo lançamento com parcelamento em 256x.' WHERE id = 5;
+```
+
+## DELETE (SEMPRE COM WHERE!!)
+```sql
+DELETE FROM produtos WHERE id = 3;
+DELETE FROM fabricantes WHERE id = 1; -- ERRO! Pois já tem produtos relacionados a esse fabricante, para apagar, você tem que se livar dos produtos dependentes.
 ```
