@@ -43,3 +43,24 @@ VALUES('iPad Mini', 'Tablet Apple com tela retina de 4k.', 4)
 INSERT INTO produtos (nome, descricao, fabricante_id)
 VALUES('Ultrabook', 'Equipamento com processador AMD Ryzen, 12 GB de RAM.', 2)
 ```
+
+### Ler dados da tabela Produtos
+
+```sql
+SELECT * FROM produtos;
+
+SELECT nome FROM produtos;
+
+SELECT nome, descricao FROM produtos;
+
+/* Trazer o nome dos produtos apenas da Apple. WHERE (ONDE) indica a condição */
+SELECT nome FROM produtos WHERE fabricante_id = 4;
+
+/*OPERADOR DIFERENTE: != ou <> */
+SELECT nome FROM produtos WHERE fabricante_id != 4;
+SELECT nome FROM produtos WHERE fabricante_id <> 4;
+
+/* OPERADOR OU: OR */
+SELECT nome, descricao FROM produtos
+WHERE fabricante_id = 2 OR fabricante_id = 3;
+```
